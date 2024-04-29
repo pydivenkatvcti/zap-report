@@ -2,7 +2,7 @@ from bs4 import BeautifulSoup
 import csv
 
 # Read the OWASP ZAP HTML report
-with open('owasp_report.html', 'r') as file:
+with open('2024-04-25-ZAP-Report-.html', 'r') as file:
     html_content = file.read()
 
 # Parse the HTML content
