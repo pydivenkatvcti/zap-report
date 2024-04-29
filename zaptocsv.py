@@ -1,37 +1,36 @@
 from bs4 import BeautifulSoup
 import csv
 
-
-with open('2024-04-25-ZAP-Report-.html', 'r') as file:
+# Read the OWASP ZAP HTML report
+with open('owasp_report.html', 'r') as file:
     html_content = file.read()
 
-
+# Parse the HTML content
 soup = BeautifulSoup(html_content, 'html.parser')
 
-alerts_section = soup.find('section', {'id': 'alerts'})
+# Find the section containing the site risk counts
+site_risk_counts_section = soup.find('section', {'id': 'site-risk-counts'})
 
+# Initialize data list to store extracted data
+data = [['Site', 'High', 'Medium', 'Low', 'Informational']]
 
-data = [['Risk', 'Confidence', 'Count']]
-
-
-if alerts_section:
-    
-    items = alerts_section.find_all('li', class_='alerts--site-li')
-    for item in items:
-        # Extract risk level and confidence level from the <td> elements
-        risk_level = item.find_previous('td', class_='risk-level').text.strip() if item.find_previous('td', class_='risk-level') else 'Unknown'
-        confidence_level = item.find_previous('td', class_='confidence-level').text.strip() if item.find_previous('td', class_='confidence-level') else 'Unknown'
+# Extract data from the site risk counts section
+if site_risk_counts_section:
+    # Find all rows within the table
+    rows = site_risk_counts_section.find_all('tr')
+    for row in rows[1:]:  # Skip the first row as it contains column headers
+        # Extract site name from the first column
+        site_name = row.find('th', scope='row').text.strip()
         
-        # Extract count from the <span> element
-        count_span = item.find('span')
-        count = int(count_span.text.strip()) if count_span and count_span.text.strip().isdigit() else 0
+        # Extract counts from subsequent columns
+        counts = [span.text.strip() for span in row.find_all('span')]
         
         # Append extracted data to the data list
-        data.append([risk_level, confidence_level, count])
+        data.append([site_name] + counts)
 
-# Writing the extracted data to the csv file
-with open('owasp_alerts.csv', 'w', newline='') as csvfile:
+# Write the extracted data to a CSV file
+with open('site_risk_counts.csv', 'w', newline='') as csvfile:
     writer = csv.writer(csvfile)
     writer.writerows(data)
 
-print("Conversion complete. CSV file saved as 'owasp_alerts.csv'")
+print("Conversion complete. CSV file saved as 'site_risk_counts.csv'")
