@@ -1,0 +1,1892 @@
+
+Desktop/chatapp/pom.xml (pom)
+=============================
+Total: 15 (UNKNOWN: 0, LOW: 0, MEDIUM: 5, HIGH: 10, CRITICAL: 0)
+
+┌────────────────────────────────────────────────┬────────────────┬──────────┬────────┬───────────────────┬─────────────────────────────────────┬──────────────────────────────────────────────────────────────┐
+│                    Library                     │ Vulnerability  │ Severity │ Status │ Installed Version │            Fixed Version            │                            Title                             │
+├────────────────────────────────────────────────┼────────────────┼──────────┼────────┼───────────────────┼─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ ch.qos.logback:logback-classic                 │ CVE-2023-6378  │ HIGH     │ fixed  │ 1.4.11            │ 1.3.12, 1.4.12, 1.2.13              │ logback: serialization vulnerability in logback receiver     │
+│                                                │                │          │        │                   │                                     │ https://avd.aquasec.com/nvd/cve-2023-6378                    │
+├────────────────────────────────────────────────┤                │          │        │                   │                                     │                                                              │
+│ ch.qos.logback:logback-core                    │                │          │        │                   │                                     │                                                              │
+│                                                │                │          │        │                   │                                     │                                                              │
+├────────────────────────────────────────────────┼────────────────┼──────────┤        ├───────────────────┼─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ com.rabbitmq:amqp-client                       │ CVE-2023-46120 │ MEDIUM   │        │ 5.17.1            │ 5.18.0                              │ RabbitMQ Java client's Lack of Message Size Limitation leads │
+│                                                │                │          │        │                   │                                     │ to Remote DoS...                                             │
+│                                                │                │          │        │                   │                                     │ https://avd.aquasec.com/nvd/cve-2023-46120                   │
+├────────────────────────────────────────────────┼────────────────┤          │        ├───────────────────┼─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ io.netty:netty-codec-http                      │ CVE-2024-29025 │          │        │ 4.1.100.Final     │ 4.1.108.Final                       │ netty-codec-http: Allocation of Resources Without Limits or  │
+│                                                │                │          │        │                   │                                     │ Throttling                                                   │
+│                                                │                │          │        │                   │                                     │ https://avd.aquasec.com/nvd/cve-2024-29025                   │
+├────────────────────────────────────────────────┼────────────────┼──────────┤        ├───────────────────┼─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ io.projectreactor.netty:reactor-netty-http     │ CVE-2023-34054 │ HIGH     │        │ 1.1.12            │ 1.1.13, 1.0.39                      │ Reactor Netty HTTP Server denial of service vulnerability    │
+│                                                │                │          │        │                   │                                     │ https://avd.aquasec.com/nvd/cve-2023-34054                   │
+│                                                ├────────────────┤          │        │                   │                                     ├──────────────────────────────────────────────────────────────┤
+│                                                │ CVE-2023-34062 │          │        │                   │                                     │ reactor-netty-http: directory traversal vulnerability        │
+│                                                │                │          │        │                   │                                     │ https://avd.aquasec.com/nvd/cve-2023-34062                   │
+├────────────────────────────────────────────────┼────────────────┤          │        ├───────────────────┼─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ org.apache.tomcat.embed:tomcat-embed-core      │ CVE-2023-46589 │          │        │ 10.1.15           │ 11.0.0-M11, 10.1.16, 9.0.83, 8.5.96 │ tomcat: HTTP request smuggling via malformed trailer headers │
+│                                                │                │          │        │                   │                                     │ https://avd.aquasec.com/nvd/cve-2023-46589                   │
+│                                                ├────────────────┼──────────┤        │                   ├─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                │ CVE-2024-24549 │ MEDIUM   │        │                   │ 8.5.99, 9.0.86, 10.1.19, 11.0.0-M17 │ : Apache Tomcat: HTTP/2 header handling DoS                  │
+│                                                │                │          │        │                   │                                     │ https://avd.aquasec.com/nvd/cve-2024-24549                   │
+├────────────────────────────────────────────────┼────────────────┤          │        │                   ├─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ org.apache.tomcat.embed:tomcat-embed-websocket │ CVE-2024-23672 │          │        │                   │ 11.0.0-M17, 10.1.19, 9.0.86, 8.5.99 │ Apache Tomcat: WebSocket DoS with incomplete closing         │
+│                                                │                │          │        │                   │                                     │ handshake                                                    │
+│                                                │                │          │        │                   │                                     │ https://avd.aquasec.com/nvd/cve-2024-23672                   │
+├────────────────────────────────────────────────┼────────────────┤          │        ├───────────────────┼─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ org.springframework.boot:spring-boot           │ CVE-2023-34055 │          │        │ 3.1.5             │ 2.7.18, 3.0.13, 3.1.6               │ spring-boot: org.springframework.boot:spring-boot-actuator   │
+│                                                │                │          │        │                   │                                     │ class vulnerable to denial of service                        │
+│                                                │                │          │        │                   │                                     │ https://avd.aquasec.com/nvd/cve-2023-34055                   │
+├────────────────────────────────────────────────┼────────────────┼──────────┤        ├───────────────────┼─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ org.springframework:spring-web                 │ CVE-2024-22243 │ HIGH     │        │ 6.0.13            │ 6.1.4, 6.0.17, 5.3.32               │ springframework: URL Parsing with Host Validation            │
+│                                                │                │          │        │                   │                                     │ https://avd.aquasec.com/nvd/cve-2024-22243                   │
+│                                                ├────────────────┤          │        │                   ├─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                │ CVE-2024-22259 │          │        │                   │ 6.1.5, 6.0.18, 5.3.33               │ springframework: URL Parsing with Host Validation            │
+│                                                │                │          │        │                   │                                     │ https://avd.aquasec.com/nvd/cve-2024-22259                   │
+│                                                ├────────────────┤          │        │                   ├─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                                │ CVE-2024-22262 │          │        │                   │ 5.3.34, 6.0.19, 6.1.6               │ springframework: URL Parsing with Host Validation            │
+│                                                │                │          │        │                   │                                     │ https://avd.aquasec.com/nvd/cve-2024-22262                   │
+├────────────────────────────────────────────────┼────────────────┤          │        │                   ├─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ org.springframework:spring-webmvc              │ CVE-2023-34053 │          │        │                   │ 6.0.14                              │ springframework: io.micrometer:micrometer-core classpath     │
+│                                                │                │          │        │                   │                                     │ vulnerable to denial of service                              │
+│                                                │                │          │        │                   │                                     │ https://avd.aquasec.com/nvd/cve-2023-34053                   │
+├────────────────────────────────────────────────┼────────────────┤          │        ├───────────────────┼─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ org.yaml:snakeyaml                             │ CVE-2022-1471  │          │        │ 1.33              │ 2.0                                 │ SnakeYaml: Constructor Deserialization Remote Code Execution │
+│                                                │                │          │        │                   │                                     │ https://avd.aquasec.com/nvd/cve-2022-1471                    │
+└────────────────────────────────────────────────┴────────────────┴──────────┴────────┴───────────────────┴─────────────────────────────────────┴──────────────────────────────────────────────────────────────┘
+
+Desktop/devsecops/devsecops-crash-course-pygoat/requirements.txt (pip)
+======================================================================
+Total: 30 (UNKNOWN: 0, LOW: 4, MEDIUM: 11, HIGH: 12, CRITICAL: 3)
+
+┌──────────────┬─────────────────────┬──────────┬────────┬───────────────────┬───────────────────────┬──────────────────────────────────────────────────────────────┐
+│   Library    │    Vulnerability    │ Severity │ Status │ Installed Version │     Fixed Version     │                            Title                             │
+├──────────────┼─────────────────────┼──────────┼────────┼───────────────────┼───────────────────────┼──────────────────────────────────────────────────────────────┤
+│ Django       │ CVE-2023-31047      │ CRITICAL │ fixed  │ 4.1.7             │ 3.2.19, 4.1.9, 4.2.1  │ python-django: Potential bypass of validation when uploading │
+│              │                     │          │        │                   │                       │ multiple files using one form...                             │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2023-31047                   │
+│              ├─────────────────────┼──────────┤        │                   ├───────────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2023-36053      │ HIGH     │        │                   │ 3.2.20, 4.1.10, 4.2.3 │ python-django: Potential regular expression denial of        │
+│              │                     │          │        │                   │                       │ service vulnerability in EmailValidator/URLValidator         │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2023-36053                   │
+│              ├─────────────────────┤          │        │                   ├───────────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2023-46695      │          │        │                   │ 3.2.23, 4.1.13, 4.2.7 │ python-django: Potential denial of service vulnerability in  │
+│              │                     │          │        │                   │                       │ UsernameField on Windows                                     │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2023-46695                   │
+│              ├─────────────────────┼──────────┤        │                   ├───────────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2023-41164      │ MEDIUM   │        │                   │ 3.2.21, 4.1.11, 4.2.5 │ python-django: Potential denial of service vulnerability in  │
+│              │                     │          │        │                   │                       │ ``django.utils.encoding.uri_to_iri()``                       │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2023-41164                   │
+│              ├─────────────────────┤          │        │                   ├───────────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2023-43665      │          │        │                   │ 3.2.22, 4.1.12, 4.2.6 │ python-django: Denial-of-service possibility in              │
+│              │                     │          │        │                   │                       │ django.utils.text.Truncator                                  │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2023-43665                   │
+├──────────────┼─────────────────────┼──────────┤        ├───────────────────┼───────────────────────┼──────────────────────────────────────────────────────────────┤
+│ Pillow       │ CVE-2023-44271      │ HIGH     │        │ 9.4.0             │ 10.0.0                │ python-pillow: uncontrolled resource consumption when        │
+│              │                     │          │        │                   │                       │ textlength in an ImageDraw instance operates on...           │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2023-44271                   │
+│              ├─────────────────────┤          │        │                   ├───────────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2023-4863       │          │        │                   │ 10.0.1                │ libwebp: Heap buffer overflow in WebP Codec                  │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2023-4863                    │
+│              ├─────────────────────┤          │        │                   ├───────────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2023-50447      │          │        │                   │ 10.2.0                │ pillow:Arbitrary Code Execution via the environment          │
+│              │                     │          │        │                   │                       │ parameter                                                    │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2023-50447                   │
+│              ├─────────────────────┤          │        │                   ├───────────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ GHSA-56pw-mpj4-fxww │          │        │                   │ 10.0.1                │ Bundled libwebp in Pillow vulnerable                         │
+│              │                     │          │        │                   │                       │ https://github.com/advisories/GHSA-56pw-mpj4-fxww            │
+│              ├─────────────────────┼──────────┤        │                   ├───────────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2024-28219      │ MEDIUM   │        │                   │ 10.3.0                │ python-pillow: buffer overflow in _imagingcms.c              │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2024-28219                   │
+├──────────────┼─────────────────────┼──────────┤        ├───────────────────┼───────────────────────┼──────────────────────────────────────────────────────────────┤
+│ PyYAML       │ CVE-2020-14343      │ CRITICAL │        │ 5.1               │ 5.4                   │ PyYAML: incomplete fix for CVE-2020-1747                     │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2020-14343                   │
+│              ├─────────────────────┤          │        │                   ├───────────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2020-1747       │          │        │                   │ 5.3.1                 │ PyYAML: arbitrary command execution through                  │
+│              │                     │          │        │                   │                       │ python/object/new when FullLoader is used                    │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2020-1747                    │
+│              ├─────────────────────┼──────────┤        │                   ├───────────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2019-20477      │ HIGH     │        │                   │ 5.2                   │ PyYAML: command execution through python/object/apply        │
+│              │                     │          │        │                   │                       │ constructor in FullLoader                                    │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2019-20477                   │
+├──────────────┼─────────────────────┤          │        ├───────────────────┼───────────────────────┼──────────────────────────────────────────────────────────────┤
+│ Werkzeug     │ CVE-2023-25577      │          │        │ 2.1.2             │ 2.2.3                 │ python-werkzeug: high resource usage when parsing multipart  │
+│              │                     │          │        │                   │                       │ form data with many fields...                                │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2023-25577                   │
+│              ├─────────────────────┼──────────┤        │                   ├───────────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2023-46136      │ MEDIUM   │        │                   │ 3.0.1, 2.3.8          │ python-werkzeug: high resource consumption leading to denial │
+│              │                     │          │        │                   │                       │ of service                                                   │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2023-46136                   │
+│              ├─────────────────────┼──────────┤        │                   ├───────────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2023-23934      │ LOW      │        │                   │ 2.2.3                 │ python-werkzeug: cookie prefixed with = can shadow           │
+│              │                     │          │        │                   │                       │ unprefixed cookie                                            │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2023-23934                   │
+├──────────────┼─────────────────────┼──────────┤        ├───────────────────┼───────────────────────┼──────────────────────────────────────────────────────────────┤
+│ certifi      │ CVE-2023-37920      │ HIGH     │        │ 2022.12.7         │ 2023.7.22             │ python-certifi: Removal of e-Tugra root certificate          │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2023-37920                   │
+├──────────────┼─────────────────────┤          │        ├───────────────────┼───────────────────────┼──────────────────────────────────────────────────────────────┤
+│ cryptography │ CVE-2023-50782      │          │        │ 39.0.1            │ 42.0.0                │ python-cryptography: Bleichenbacher timing oracle attack     │
+│              │                     │          │        │                   │                       │ against RSA decryption - incomplete fix for...               │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2023-50782                   │
+│              ├─────────────────────┤          │        │                   ├───────────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2024-26130      │          │        │                   │ 42.0.4                │ python-cryptography: NULL pointer dereference with           │
+│              │                     │          │        │                   │                       │ pkcs12.serialize_key_and_certificates when called with a     │
+│              │                     │          │        │                   │                       │ non-matching certificate...                                  │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2024-26130                   │
+│              ├─────────────────────┼──────────┤        │                   ├───────────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2023-49083      │ MEDIUM   │        │                   │ 41.0.6                │ python-cryptography: NULL-dereference when loading PKCS7     │
+│              │                     │          │        │                   │                       │ certificates                                                 │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2023-49083                   │
+│              ├─────────────────────┤          │        │                   ├───────────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2024-0727       │          │        │                   │ 42.0.2                │ openssl: denial of service via null dereference              │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2024-0727                    │
+│              ├─────────────────────┼──────────┤        │                   ├───────────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ GHSA-5cpq-8wj7-hf2v │ LOW      │        │                   │ 41.0.0                │ Vulnerable OpenSSL included in cryptography wheels           │
+│              │                     │          │        │                   │                       │ https://github.com/advisories/GHSA-5cpq-8wj7-hf2v            │
+│              ├─────────────────────┤          │        │                   ├───────────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ GHSA-jm77-qphf-c4w8 │          │        │                   │ 41.0.3                │ pyca/cryptography's wheels include vulnerable OpenSSL        │
+│              │                     │          │        │                   │                       │ https://github.com/advisories/GHSA-jm77-qphf-c4w8            │
+│              ├─────────────────────┤          │        │                   ├───────────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ GHSA-v8gr-m533-ghj9 │          │        │                   │ 41.0.4                │ Vulnerable OpenSSL included in cryptography wheels           │
+│              │                     │          │        │                   │                       │ https://github.com/advisories/GHSA-v8gr-m533-ghj9            │
+├──────────────┼─────────────────────┼──────────┤        ├───────────────────┼───────────────────────┼──────────────────────────────────────────────────────────────┤
+│ idna         │ CVE-2024-3651       │ MEDIUM   │        │ 3.4               │ 3.7                   │ python-idna: potential DoS via resource consumption via      │
+│              │                     │          │        │                   │                       │ specially crafted inputs to idna.encode()...                 │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2024-3651                    │
+├──────────────┼─────────────────────┤          │        ├───────────────────┼───────────────────────┼──────────────────────────────────────────────────────────────┤
+│ requests     │ CVE-2023-32681      │          │        │ 2.28.2            │ 2.31.0                │ python-requests: Unintended leak of Proxy-Authorization      │
+│              │                     │          │        │                   │                       │ header                                                       │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2023-32681                   │
+├──────────────┼─────────────────────┼──────────┤        ├───────────────────┼───────────────────────┼──────────────────────────────────────────────────────────────┤
+│ sqlparse     │ GHSA-2m57-hf25-phgg │ HIGH     │        │ 0.3.1             │ 0.5.0                 │ sqlparse parsing heavily nested list leads to Denial of      │
+│              │                     │          │        │                   │                       │ Service                                                      │
+│              │                     │          │        │                   │                       │ https://github.com/advisories/GHSA-2m57-hf25-phgg            │
+│              ├─────────────────────┼──────────┤        │                   ├───────────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2023-30608      │ MEDIUM   │        │                   │ 0.4.4                 │ sqlparse: Parser contains a regular expression that is       │
+│              │                     │          │        │                   │                       │ vulnerable to ReDOS (Regular...                              │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2023-30608                   │
+├──────────────┼─────────────────────┤          │        ├───────────────────┼───────────────────────┼──────────────────────────────────────────────────────────────┤
+│ urllib3      │ CVE-2023-43804      │          │        │ 1.26.9            │ 2.0.6, 1.26.17        │ python-urllib3: Cookie request header isn't stripped during  │
+│              │                     │          │        │                   │                       │ cross-origin redirects                                       │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2023-43804                   │
+│              ├─────────────────────┤          │        │                   ├───────────────────────┼──────────────────────────────────────────────────────────────┤
+│              │ CVE-2023-45803      │          │        │                   │ 2.0.7, 1.26.18        │ urllib3: Request body not stripped after redirect from 303   │
+│              │                     │          │        │                   │                       │ status changes request...                                    │
+│              │                     │          │        │                   │                       │ https://avd.aquasec.com/nvd/cve-2023-45803                   │
+└──────────────┴─────────────────────┴──────────┴────────┴───────────────────┴───────────────────────┴──────────────────────────────────────────────────────────────┘
+
+go/pkg/mod/github.com/containerd/stargz-snapshotter/estargz@v0.12.1/go.mod (gomod)
+==================================================================================
+Total: 4 (UNKNOWN: 0, LOW: 0, MEDIUM: 3, HIGH: 1, CRITICAL: 0)
+
+┌──────────────────┬────────────────┬──────────┬────────┬───────────────────────────────────┬───────────────────────────────────┬──────────────────────────────────────────────────────────────┐
+│     Library      │ Vulnerability  │ Severity │ Status │         Installed Version         │           Fixed Version           │                            Title                             │
+├──────────────────┼────────────────┼──────────┼────────┼───────────────────────────────────┼───────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ golang.org/x/sys │ CVE-2022-29526 │ MEDIUM   │ fixed  │ 0.0.0-20191026070338-33540a1f6037 │ 0.0.0-20220412211240-33da011f77ad │ golang: syscall: faccessat checks wrong group                │
+│                  │                │          │        │                                   │                                   │ https://avd.aquasec.com/nvd/cve-2022-29526                   │
+├──────────────────┼────────────────┼──────────┤        ├───────────────────────────────────┼───────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ gopkg.in/yaml.v2 │ CVE-2022-3064  │ HIGH     │        │ 2.2.2                             │ 2.2.4                             │ go-yaml: Improve heuristics preventing CPU/memory abuse by   │
+│                  │                │          │        │                                   │                                   │ parsing malicious or large YAML...                           │
+│                  │                │          │        │                                   │                                   │ https://avd.aquasec.com/nvd/cve-2022-3064                    │
+│                  ├────────────────┼──────────┤        │                                   ├───────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                  │ CVE-2019-11254 │ MEDIUM   │        │                                   │ 2.2.8                             │ kubernetes: Denial of service in API server via crafted YAML │
+│                  │                │          │        │                                   │                                   │ payloads by...                                               │
+│                  │                │          │        │                                   │                                   │ https://avd.aquasec.com/nvd/cve-2019-11254                   │
+│                  ├────────────────┤          │        │                                   ├───────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                  │ CVE-2021-4235  │          │        │                                   │ 2.2.3                             │ go-yaml: Denial of Service in go-yaml                        │
+│                  │                │          │        │                                   │                                   │ https://avd.aquasec.com/nvd/cve-2021-4235                    │
+└──────────────────┴────────────────┴──────────┴────────┴───────────────────────────────────┴───────────────────────────────────┴──────────────────────────────────────────────────────────────┘
+
+go/pkg/mod/github.com/docker/docker-credential-helpers@v0.7.0/go.mod (gomod)
+============================================================================
+Total: 1 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+┌──────────────────┬────────────────┬──────────┬────────┬───────────────────────────────────┬───────────────────────────────────┬─────────────────────────────────────────────────────────┐
+│     Library      │ Vulnerability  │ Severity │ Status │         Installed Version         │           Fixed Version           │                          Title                          │
+├──────────────────┼────────────────┼──────────┼────────┼───────────────────────────────────┼───────────────────────────────────┼─────────────────────────────────────────────────────────┤
+│ gopkg.in/yaml.v3 │ CVE-2022-28948 │ HIGH     │ fixed  │ 3.0.0-20200313102051-9f266ea9e77c │ 3.0.0-20220521103104-8f96da9f5d5e │ golang-gopkg-yaml: crash when attempting to deserialize │
+│                  │                │          │        │                                   │                                   │ invalid input                                           │
+│                  │                │          │        │                                   │                                   │ https://avd.aquasec.com/nvd/cve-2022-28948              │
+└──────────────────┴────────────────┴──────────┴────────┴───────────────────────────────────┴───────────────────────────────────┴─────────────────────────────────────────────────────────┘
+
+go/pkg/mod/github.com/fatih/color@v1.13.0/go.mod (gomod)
+========================================================
+Total: 1 (UNKNOWN: 0, LOW: 0, MEDIUM: 1, HIGH: 0, CRITICAL: 0)
+
+┌──────────────────┬────────────────┬──────────┬────────┬───────────────────────────────────┬───────────────────────────────────┬───────────────────────────────────────────────┐
+│     Library      │ Vulnerability  │ Severity │ Status │         Installed Version         │           Fixed Version           │                     Title                     │
+├──────────────────┼────────────────┼──────────┼────────┼───────────────────────────────────┼───────────────────────────────────┼───────────────────────────────────────────────┤
+│ golang.org/x/sys │ CVE-2022-29526 │ MEDIUM   │ fixed  │ 0.0.0-20210630005230-0f9fa26af87c │ 0.0.0-20220412211240-33da011f77ad │ golang: syscall: faccessat checks wrong group │
+│                  │                │          │        │                                   │                                   │ https://avd.aquasec.com/nvd/cve-2022-29526    │
+└──────────────────┴────────────────┴──────────┴────────┴───────────────────────────────────┴───────────────────────────────────┴───────────────────────────────────────────────┘
+
+go/pkg/mod/github.com/google/go-containerregistry@v0.12.0/go.mod (gomod)
+========================================================================
+Total: 14 (UNKNOWN: 0, LOW: 0, MEDIUM: 9, HIGH: 5, CRITICAL: 0)
+
+┌────────────────────────────────┬─────────────────────┬──────────┬────────┬───────────────────────┬─────────────────────────────────────┬──────────────────────────────────────────────────────────────┐
+│            Library             │    Vulnerability    │ Severity │ Status │   Installed Version   │            Fixed Version            │                            Title                             │
+├────────────────────────────────┼─────────────────────┼──────────┼────────┼───────────────────────┼─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ github.com/docker/distribution │ CVE-2023-2253       │ HIGH     │ fixed  │ 2.8.1+incompatible    │ 2.8.2-beta.1                        │ distribution/distribution: DoS from malicious API request    │
+│                                │                     │          │        │                       │                                     │ https://avd.aquasec.com/nvd/cve-2023-2253                    │
+├────────────────────────────────┼─────────────────────┤          │        ├───────────────────────┼─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ github.com/docker/docker       │ CVE-2023-28840      │          │        │ 20.10.20+incompatible │ 20.10.24, 23.0.3                    │ moby: Encrypted overlay network may be unauthenticated       │
+│                                │                     │          │        │                       │                                     │ https://avd.aquasec.com/nvd/cve-2023-28840                   │
+│                                ├─────────────────────┼──────────┤        │                       │                                     ├──────────────────────────────────────────────────────────────┤
+│                                │ CVE-2023-28841      │ MEDIUM   │        │                       │                                     │ moby: Encrypted overlay network traffic may be unencrypted   │
+│                                │                     │          │        │                       │                                     │ https://avd.aquasec.com/nvd/cve-2023-28841                   │
+│                                ├─────────────────────┤          │        │                       │                                     ├──────────────────────────────────────────────────────────────┤
+│                                │ CVE-2023-28842      │          │        │                       │                                     │ moby: Encrypted overlay network with a single endpoint is    │
+│                                │                     │          │        │                       │                                     │ unauthenticated                                              │
+│                                │                     │          │        │                       │                                     │ https://avd.aquasec.com/nvd/cve-2023-28842                   │
+│                                ├─────────────────────┤          │        │                       ├─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                │ CVE-2024-24557      │          │        │                       │ 25.0.2, 24.0.9                      │ moby: classic builder cache poisoning                        │
+│                                │                     │          │        │                       │                                     │ https://avd.aquasec.com/nvd/cve-2024-24557                   │
+│                                ├─────────────────────┤          │        │                       ├─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                │ CVE-2024-29018      │          │        │                       │ 26.0.0-rc3, 25.0.5, 23.0.11         │ moby: external DNS requests from 'internal' networks could   │
+│                                │                     │          │        │                       │                                     │ lead to data exfiltration...                                 │
+│                                │                     │          │        │                       │                                     │ https://avd.aquasec.com/nvd/cve-2024-29018                   │
+│                                ├─────────────────────┤          │        │                       ├─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                │ GHSA-jq35-85cj-fj4p │          │        │                       │ 24.0.7, 23.0.8, 20.10.27            │ /sys/devices/virtual/powercap accessible by default to       │
+│                                │                     │          │        │                       │                                     │ containers                                                   │
+│                                │                     │          │        │                       │                                     │ https://github.com/advisories/GHSA-jq35-85cj-fj4p            │
+├────────────────────────────────┼─────────────────────┼──────────┤        ├───────────────────────┼─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ golang.org/x/net               │ CVE-2022-41721      │ HIGH     │        │ 0.1.0                 │ 0.1.1-0.20221104162952-702349b0e862 │ x/net/http2/h2c: request smuggling                           │
+│                                │                     │          │        │                       │                                     │ https://avd.aquasec.com/nvd/cve-2022-41721                   │
+│                                ├─────────────────────┤          │        │                       ├─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                │ CVE-2022-41723      │          │        │                       │ 0.7.0                               │ net/http, golang.org/x/net/http2: avoid quadratic complexity │
+│                                │                     │          │        │                       │                                     │ in HPACK decoding                                            │
+│                                │                     │          │        │                       │                                     │ https://avd.aquasec.com/nvd/cve-2022-41723                   │
+│                                ├─────────────────────┤          │        │                       ├─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                │ CVE-2023-39325      │          │        │                       │ 0.17.0                              │ golang: net/http, x/net/http2: rapid stream resets can cause │
+│                                │                     │          │        │                       │                                     │ excessive work (CVE-2023-44487)                              │
+│                                │                     │          │        │                       │                                     │ https://avd.aquasec.com/nvd/cve-2023-39325                   │
+│                                ├─────────────────────┼──────────┤        │                       ├─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                │ CVE-2023-3978       │ MEDIUM   │        │                       │ 0.13.0                              │ golang.org/x/net/html: Cross site scripting                  │
+│                                │                     │          │        │                       │                                     │ https://avd.aquasec.com/nvd/cve-2023-3978                    │
+│                                ├─────────────────────┤          │        │                       ├─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                │ CVE-2023-44487      │          │        │                       │ 0.17.0                              │ HTTP/2: Multiple HTTP/2 enabled web servers are vulnerable   │
+│                                │                     │          │        │                       │                                     │ to a DDoS attack...                                          │
+│                                │                     │          │        │                       │                                     │ https://avd.aquasec.com/nvd/cve-2023-44487                   │
+│                                ├─────────────────────┤          │        │                       ├─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                                │ CVE-2023-45288      │          │        │                       │ 0.23.0                              │ golang: net/http, x/net/http2: unlimited number of           │
+│                                │                     │          │        │                       │                                     │ CONTINUATION frames causes DoS                               │
+│                                │                     │          │        │                       │                                     │ https://avd.aquasec.com/nvd/cve-2023-45288                   │
+├────────────────────────────────┼─────────────────────┤          │        ├───────────────────────┼─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ google.golang.org/protobuf     │ CVE-2024-24786      │          │        │ 1.28.1                │ 1.33.0                              │ golang-protobuf: encoding/protojson, internal/encoding/json: │
+│                                │                     │          │        │                       │                                     │ infinite loop in protojson.Unmarshal when unmarshaling       │
+│                                │                     │          │        │                       │                                     │ certain forms of...                                          │
+│                                │                     │          │        │                       │                                     │ https://avd.aquasec.com/nvd/cve-2024-24786                   │
+└────────────────────────────────┴─────────────────────┴──────────┴────────┴───────────────────────┴─────────────────────────────────────┴──────────────────────────────────────────────────────────────┘
+
+go/pkg/mod/github.com/jetstack/paranoia@v0.2.1/go.mod (gomod)
+=============================================================
+Total: 7 (UNKNOWN: 0, LOW: 0, MEDIUM: 5, HIGH: 2, CRITICAL: 0)
+
+┌────────────────────────────────┬─────────────────────┬──────────┬────────┬───────────────────────┬─────────────────────────────┬────────────────────────────────────────────────────────────┐
+│            Library             │    Vulnerability    │ Severity │ Status │   Installed Version   │        Fixed Version        │                           Title                            │
+├────────────────────────────────┼─────────────────────┼──────────┼────────┼───────────────────────┼─────────────────────────────┼────────────────────────────────────────────────────────────┤
+│ github.com/docker/distribution │ CVE-2023-2253       │ HIGH     │ fixed  │ 2.8.1+incompatible    │ 2.8.2-beta.1                │ distribution/distribution: DoS from malicious API request  │
+│                                │                     │          │        │                       │                             │ https://avd.aquasec.com/nvd/cve-2023-2253                  │
+├────────────────────────────────┼─────────────────────┤          │        ├───────────────────────┼─────────────────────────────┼────────────────────────────────────────────────────────────┤
+│ github.com/docker/docker       │ CVE-2023-28840      │          │        │ 20.10.20+incompatible │ 20.10.24, 23.0.3            │ moby: Encrypted overlay network may be unauthenticated     │
+│                                │                     │          │        │                       │                             │ https://avd.aquasec.com/nvd/cve-2023-28840                 │
+│                                ├─────────────────────┼──────────┤        │                       │                             ├────────────────────────────────────────────────────────────┤
+│                                │ CVE-2023-28841      │ MEDIUM   │        │                       │                             │ moby: Encrypted overlay network traffic may be unencrypted │
+│                                │                     │          │        │                       │                             │ https://avd.aquasec.com/nvd/cve-2023-28841                 │
+│                                ├─────────────────────┤          │        │                       │                             ├────────────────────────────────────────────────────────────┤
+│                                │ CVE-2023-28842      │          │        │                       │                             │ moby: Encrypted overlay network with a single endpoint is  │
+│                                │                     │          │        │                       │                             │ unauthenticated                                            │
+│                                │                     │          │        │                       │                             │ https://avd.aquasec.com/nvd/cve-2023-28842                 │
+│                                ├─────────────────────┤          │        │                       ├─────────────────────────────┼────────────────────────────────────────────────────────────┤
+│                                │ CVE-2024-24557      │          │        │                       │ 25.0.2, 24.0.9              │ moby: classic builder cache poisoning                      │
+│                                │                     │          │        │                       │                             │ https://avd.aquasec.com/nvd/cve-2024-24557                 │
+│                                ├─────────────────────┤          │        │                       ├─────────────────────────────┼────────────────────────────────────────────────────────────┤
+│                                │ CVE-2024-29018      │          │        │                       │ 26.0.0-rc3, 25.0.5, 23.0.11 │ moby: external DNS requests from 'internal' networks could │
+│                                │                     │          │        │                       │                             │ lead to data exfiltration...                               │
+│                                │                     │          │        │                       │                             │ https://avd.aquasec.com/nvd/cve-2024-29018                 │
+│                                ├─────────────────────┤          │        │                       ├─────────────────────────────┼────────────────────────────────────────────────────────────┤
+│                                │ GHSA-jq35-85cj-fj4p │          │        │                       │ 24.0.7, 23.0.8, 20.10.27    │ /sys/devices/virtual/powercap accessible by default to     │
+│                                │                     │          │        │                       │                             │ containers                                                 │
+│                                │                     │          │        │                       │                             │ https://github.com/advisories/GHSA-jq35-85cj-fj4p          │
+└────────────────────────────────┴─────────────────────┴──────────┴────────┴───────────────────────┴─────────────────────────────┴────────────────────────────────────────────────────────────┘
+
+go/pkg/mod/github.com/mattn/go-colorable@v0.1.12/go.mod (gomod)
+===============================================================
+Total: 1 (UNKNOWN: 0, LOW: 0, MEDIUM: 1, HIGH: 0, CRITICAL: 0)
+
+┌──────────────────┬────────────────┬──────────┬────────┬───────────────────────────────────┬───────────────────────────────────┬───────────────────────────────────────────────┐
+│     Library      │ Vulnerability  │ Severity │ Status │         Installed Version         │           Fixed Version           │                     Title                     │
+├──────────────────┼────────────────┼──────────┼────────┼───────────────────────────────────┼───────────────────────────────────┼───────────────────────────────────────────────┤
+│ golang.org/x/sys │ CVE-2022-29526 │ MEDIUM   │ fixed  │ 0.0.0-20210927094055-39ccf1dd6fa6 │ 0.0.0-20220412211240-33da011f77ad │ golang: syscall: faccessat checks wrong group │
+│                  │                │          │        │                                   │                                   │ https://avd.aquasec.com/nvd/cve-2022-29526    │
+└──────────────────┴────────────────┴──────────┴────────┴───────────────────────────────────┴───────────────────────────────────┴───────────────────────────────────────────────┘
+
+go/pkg/mod/github.com/mattn/go-isatty@v0.0.14/go.mod (gomod)
+============================================================
+Total: 1 (UNKNOWN: 0, LOW: 0, MEDIUM: 1, HIGH: 0, CRITICAL: 0)
+
+┌──────────────────┬────────────────┬──────────┬────────┬───────────────────────────────────┬───────────────────────────────────┬───────────────────────────────────────────────┐
+│     Library      │ Vulnerability  │ Severity │ Status │         Installed Version         │           Fixed Version           │                     Title                     │
+├──────────────────┼────────────────┼──────────┼────────┼───────────────────────────────────┼───────────────────────────────────┼───────────────────────────────────────────────┤
+│ golang.org/x/sys │ CVE-2022-29526 │ MEDIUM   │ fixed  │ 0.0.0-20210630005230-0f9fa26af87c │ 0.0.0-20220412211240-33da011f77ad │ golang: syscall: faccessat checks wrong group │
+│                  │                │          │        │                                   │                                   │ https://avd.aquasec.com/nvd/cve-2022-29526    │
+└──────────────────┴────────────────┴──────────┴────────┴───────────────────────────────────┴───────────────────────────────────┴───────────────────────────────────────────────┘
+
+go/pkg/mod/github.com/opencontainers/image-spec@v1.1.0-rc2/go.mod (gomod)
+=========================================================================
+Total: 1 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+┌──────────────────┬────────────────┬──────────┬────────┬───────────────────────────────────┬───────────────────────────────────┬─────────────────────────────────────────────────────────┐
+│     Library      │ Vulnerability  │ Severity │ Status │         Installed Version         │           Fixed Version           │                          Title                          │
+├──────────────────┼────────────────┼──────────┼────────┼───────────────────────────────────┼───────────────────────────────────┼─────────────────────────────────────────────────────────┤
+│ gopkg.in/yaml.v3 │ CVE-2022-28948 │ HIGH     │ fixed  │ 3.0.0-20210107192922-496545a6307b │ 3.0.0-20220521103104-8f96da9f5d5e │ golang-gopkg-yaml: crash when attempting to deserialize │
+│                  │                │          │        │                                   │                                   │ invalid input                                           │
+│                  │                │          │        │                                   │                                   │ https://avd.aquasec.com/nvd/cve-2022-28948              │
+└──────────────────┴────────────────┴──────────┴────────┴───────────────────────────────────┴───────────────────────────────────┴─────────────────────────────────────────────────────────┘
+
+go/pkg/mod/github.com/rodaine/table@v1.0.1/go.mod (gomod)
+=========================================================
+Total: 1 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+┌──────────────────┬────────────────┬──────────┬────────┬───────────────────────────────────┬───────────────────────────────────┬─────────────────────────────────────────────────────────┐
+│     Library      │ Vulnerability  │ Severity │ Status │         Installed Version         │           Fixed Version           │                          Title                          │
+├──────────────────┼────────────────┼──────────┼────────┼───────────────────────────────────┼───────────────────────────────────┼─────────────────────────────────────────────────────────┤
+│ gopkg.in/yaml.v3 │ CVE-2022-28948 │ HIGH     │ fixed  │ 3.0.0-20200313102051-9f266ea9e77c │ 3.0.0-20220521103104-8f96da9f5d5e │ golang-gopkg-yaml: crash when attempting to deserialize │
+│                  │                │          │        │                                   │                                   │ invalid input                                           │
+│                  │                │          │        │                                   │                                   │ https://avd.aquasec.com/nvd/cve-2022-28948              │
+└──────────────────┴────────────────┴──────────┴────────┴───────────────────────────────────┴───────────────────────────────────┴─────────────────────────────────────────────────────────┘
+
+go/pkg/mod/github.com/sirupsen/logrus@v1.9.0/go.mod (gomod)
+===========================================================
+Total: 1 (UNKNOWN: 0, LOW: 0, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+┌──────────────────┬────────────────┬──────────┬────────┬───────────────────────────────────┬───────────────────────────────────┬─────────────────────────────────────────────────────────┐
+│     Library      │ Vulnerability  │ Severity │ Status │         Installed Version         │           Fixed Version           │                          Title                          │
+├──────────────────┼────────────────┼──────────┼────────┼───────────────────────────────────┼───────────────────────────────────┼─────────────────────────────────────────────────────────┤
+│ gopkg.in/yaml.v3 │ CVE-2022-28948 │ HIGH     │ fixed  │ 3.0.0-20200313102051-9f266ea9e77c │ 3.0.0-20220521103104-8f96da9f5d5e │ golang-gopkg-yaml: crash when attempting to deserialize │
+│                  │                │          │        │                                   │                                   │ invalid input                                           │
+│                  │                │          │        │                                   │                                   │ https://avd.aquasec.com/nvd/cve-2022-28948              │
+└──────────────────┴────────────────┴──────────┴────────┴───────────────────────────────────┴───────────────────────────────────┴─────────────────────────────────────────────────────────┘
+
+go/pkg/mod/github.com/vbatts/tar-split@v0.11.2/go.mod (gomod)
+=============================================================
+Total: 4 (UNKNOWN: 0, LOW: 0, MEDIUM: 3, HIGH: 1, CRITICAL: 0)
+
+┌──────────────────┬────────────────┬──────────┬────────┬───────────────────────────────────┬───────────────────────────────────┬──────────────────────────────────────────────────────────────┐
+│     Library      │ Vulnerability  │ Severity │ Status │         Installed Version         │           Fixed Version           │                            Title                             │
+├──────────────────┼────────────────┼──────────┼────────┼───────────────────────────────────┼───────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ golang.org/x/sys │ CVE-2022-29526 │ MEDIUM   │ fixed  │ 0.0.0-20191026070338-33540a1f6037 │ 0.0.0-20220412211240-33da011f77ad │ golang: syscall: faccessat checks wrong group                │
+│                  │                │          │        │                                   │                                   │ https://avd.aquasec.com/nvd/cve-2022-29526                   │
+├──────────────────┼────────────────┼──────────┤        ├───────────────────────────────────┼───────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ gopkg.in/yaml.v2 │ CVE-2022-3064  │ HIGH     │        │ 2.2.2                             │ 2.2.4                             │ go-yaml: Improve heuristics preventing CPU/memory abuse by   │
+│                  │                │          │        │                                   │                                   │ parsing malicious or large YAML...                           │
+│                  │                │          │        │                                   │                                   │ https://avd.aquasec.com/nvd/cve-2022-3064                    │
+│                  ├────────────────┼──────────┤        │                                   ├───────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                  │ CVE-2019-11254 │ MEDIUM   │        │                                   │ 2.2.8                             │ kubernetes: Denial of service in API server via crafted YAML │
+│                  │                │          │        │                                   │                                   │ payloads by...                                               │
+│                  │                │          │        │                                   │                                   │ https://avd.aquasec.com/nvd/cve-2019-11254                   │
+│                  ├────────────────┤          │        │                                   ├───────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                  │ CVE-2021-4235  │          │        │                                   │ 2.2.3                             │ go-yaml: Denial of Service in go-yaml                        │
+│                  │                │          │        │                                   │                                   │ https://avd.aquasec.com/nvd/cve-2021-4235                    │
+└──────────────────┴────────────────┴──────────┴────────┴───────────────────────────────────┴───────────────────────────────────┴──────────────────────────────────────────────────────────────┘
+
+go/pkg/mod/sigs.k8s.io/controller-runtime@v0.13.0/go.mod (gomod)
+================================================================
+Total: 9 (UNKNOWN: 0, LOW: 0, MEDIUM: 4, HIGH: 5, CRITICAL: 0)
+
+┌────────────────────────────┬────────────────┬──────────┬────────┬───────────────────────────────────┬─────────────────────────────────────┬──────────────────────────────────────────────────────────────┐
+│          Library           │ Vulnerability  │ Severity │ Status │         Installed Version         │            Fixed Version            │                            Title                             │
+├────────────────────────────┼────────────────┼──────────┼────────┼───────────────────────────────────┼─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ golang.org/x/net           │ CVE-2022-27664 │ HIGH     │ fixed  │ 0.0.0-20220722155237-a158d28d115b │ 0.0.0-20220906165146-f3363e06e74c   │ golang: net/http: handle server errors after sending GOAWAY  │
+│                            │                │          │        │                                   │                                     │ https://avd.aquasec.com/nvd/cve-2022-27664                   │
+│                            ├────────────────┤          │        │                                   ├─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                            │ CVE-2022-41721 │          │        │                                   │ 0.1.1-0.20221104162952-702349b0e862 │ x/net/http2/h2c: request smuggling                           │
+│                            │                │          │        │                                   │                                     │ https://avd.aquasec.com/nvd/cve-2022-41721                   │
+│                            ├────────────────┤          │        │                                   ├─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                            │ CVE-2022-41723 │          │        │                                   │ 0.7.0                               │ net/http, golang.org/x/net/http2: avoid quadratic complexity │
+│                            │                │          │        │                                   │                                     │ in HPACK decoding                                            │
+│                            │                │          │        │                                   │                                     │ https://avd.aquasec.com/nvd/cve-2022-41723                   │
+│                            ├────────────────┤          │        │                                   ├─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                            │ CVE-2023-39325 │          │        │                                   │ 0.17.0                              │ golang: net/http, x/net/http2: rapid stream resets can cause │
+│                            │                │          │        │                                   │                                     │ excessive work (CVE-2023-44487)                              │
+│                            │                │          │        │                                   │                                     │ https://avd.aquasec.com/nvd/cve-2023-39325                   │
+│                            ├────────────────┼──────────┤        │                                   ├─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                            │ CVE-2023-3978  │ MEDIUM   │        │                                   │ 0.13.0                              │ golang.org/x/net/html: Cross site scripting                  │
+│                            │                │          │        │                                   │                                     │ https://avd.aquasec.com/nvd/cve-2023-3978                    │
+│                            ├────────────────┤          │        │                                   ├─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                            │ CVE-2023-44487 │          │        │                                   │ 0.17.0                              │ HTTP/2: Multiple HTTP/2 enabled web servers are vulnerable   │
+│                            │                │          │        │                                   │                                     │ to a DDoS attack...                                          │
+│                            │                │          │        │                                   │                                     │ https://avd.aquasec.com/nvd/cve-2023-44487                   │
+│                            ├────────────────┤          │        │                                   ├─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│                            │ CVE-2023-45288 │          │        │                                   │ 0.23.0                              │ golang: net/http, x/net/http2: unlimited number of           │
+│                            │                │          │        │                                   │                                     │ CONTINUATION frames causes DoS                               │
+│                            │                │          │        │                                   │                                     │ https://avd.aquasec.com/nvd/cve-2023-45288                   │
+├────────────────────────────┼────────────────┼──────────┤        ├───────────────────────────────────┼─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ golang.org/x/text          │ CVE-2022-32149 │ HIGH     │        │ 0.3.7                             │ 0.3.8                               │ golang: golang.org/x/text/language: ParseAcceptLanguage      │
+│                            │                │          │        │                                   │                                     │ takes a long time to parse complex tags                      │
+│                            │                │          │        │                                   │                                     │ https://avd.aquasec.com/nvd/cve-2022-32149                   │
+├────────────────────────────┼────────────────┼──────────┤        ├───────────────────────────────────┼─────────────────────────────────────┼──────────────────────────────────────────────────────────────┤
+│ google.golang.org/protobuf │ CVE-2024-24786 │ MEDIUM   │        │ 1.28.0                            │ 1.33.0                              │ golang-protobuf: encoding/protojson, internal/encoding/json: │
+│                            │                │          │        │                                   │                                     │ infinite loop in protojson.Unmarshal when unmarshaling       │
+│                            │                │          │        │                                   │                                     │ certain forms of...                                          │
+│                            │                │          │        │                                   │                                     │ https://avd.aquasec.com/nvd/cve-2024-24786                   │
+└────────────────────────────┴────────────────┴──────────┴────────┴───────────────────────────────────┴─────────────────────────────────────┴──────────────────────────────────────────────────────────────┘
+
+.cache/Cypress/13.7.3/Cypress/resources/app/node_modules/getos/Dockerfile (dockerfile)
+======================================================================================
+Tests: 28 (SUCCESSES: 21, FAILURES: 7, EXCEPTIONS: 0)
+Failures: 7 (UNKNOWN: 0, LOW: 2, MEDIUM: 0, HIGH: 5, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Consider using 'COPY . /usr/src/' command instead of 'ADD . /usr/src/'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should use COPY instead of ADD unless you want to extract a tar file. Note that an ADD command will extract a tar file, which adds the risk of Zip-based vulnerabilities. Accordingly, it is advised to use a COPY command, which does not extract tar files.
+
+See https://avd.aquasec.com/misconfig/ds005
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ .cache/Cypress/13.7.3/Cypress/resources/app/node_modules/getos/Dockerfile:17
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  17 [ ADD . /usr/src/
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: The instruction 'RUN <package-manager> update' should always be followed by '<package-manager> install' in the same RUN statement.
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+The instruction 'RUN <package-manager> update' should always be followed by '<package-manager> install' in the same RUN statement.
+
+See https://avd.aquasec.com/misconfig/ds017
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ .cache/Cypress/13.7.3/Cypress/resources/app/node_modules/getos/Dockerfile:14
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  14 [ RUN apt-get update
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: MAINTAINER should not be used: 'MAINTAINER William Blankenship <william.jblankenship@gmail.com>'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+MAINTAINER has been deprecated since Docker 1.13.0.
+
+See https://avd.aquasec.com/misconfig/ds022
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ .cache/Cypress/13.7.3/Cypress/resources/app/node_modules/getos/Dockerfile:2
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   2 [ MAINTAINER William Blankenship <william.jblankenship@gmail.com>
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: '--no-install-recommends' flag is missed: 'apt-get install nodejs -y --force-yes'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+'apt-get' install should use '--no-install-recommends' to minimize image size.
+
+See https://avd.aquasec.com/misconfig/ds029
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ .cache/Cypress/13.7.3/Cypress/resources/app/node_modules/getos/Dockerfile:15
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  15 [ RUN apt-get install nodejs -y --force-yes
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: '--no-install-recommends' flag is missed: 'apt-get update &&     apt-get install -y --force-yes       curl       apt-transport-https       lsb-release       build-essential       python-all'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+'apt-get' install should use '--no-install-recommends' to minimize image size.
+
+See https://avd.aquasec.com/misconfig/ds029
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ .cache/Cypress/13.7.3/Cypress/resources/app/node_modules/getos/Dockerfile:5-11
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   5 ┌ RUN apt-get update && \
+   6 │     apt-get install -y --force-yes \
+   7 │       curl \
+   8 │       apt-transport-https \
+   9 │       lsb-release \
+  10 │       build-essential \
+  11 └       python-all
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+Desktop/devsecops/devsecops-crash-course-pygoat/Dockerfile (dockerfile)
+=======================================================================
+Tests: 27 (SUCCESSES: 25, FAILURES: 2, EXCEPTIONS: 0)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/cli@v20.10.20+incompatible/Dockerfile (dockerfile)
+===============================================================================
+Tests: 28 (SUCCESSES: 24, FAILURES: 4, EXCEPTIONS: 0)
+Failures: 4 (UNKNOWN: 0, LOW: 1, MEDIUM: 2, HIGH: 1, CRITICAL: 0)
+
+MEDIUM: Specify a tag in the 'FROM' statement for image 'build-${BASE_VARIANT}'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+When using a 'FROM' statement you should use a specific tag to avoid uncontrolled behavior when the image is updated.
+
+See https://avd.aquasec.com/misconfig/ds001
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/cli@v20.10.20+incompatible/Dockerfile:28
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  28 [ FROM build-${BASE_VARIANT} AS build
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: Specify a tag in the 'FROM' statement for image 'build-base-${BASE_VARIANT}'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+When using a 'FROM' statement you should use a specific tag to avoid uncontrolled behavior when the image is updated.
+
+See https://avd.aquasec.com/misconfig/ds001
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/cli@v20.10.20+incompatible/Dockerfile:47
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  47 [ FROM build-base-${BASE_VARIANT} AS dev
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/cli@v20.10.20+incompatible/cli/command/image/testdata/Dockerfile.test (dockerfile)
+===============================================================================================================
+Tests: 27 (SUCCESSES: 23, FAILURES: 4, EXCEPTIONS: 0)
+Failures: 4 (UNKNOWN: 0, LOW: 2, MEDIUM: 1, HIGH: 1, CRITICAL: 0)
+
+MEDIUM: Specify a tag in the 'FROM' statement for image 'busybox'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+When using a 'FROM' statement you should use a specific tag to avoid uncontrolled behavior when the image is updated.
+
+See https://avd.aquasec.com/misconfig/ds001
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/cli@v20.10.20+incompatible/cli/command/image/testdata/Dockerfile.test:1
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1 [ FROM busybox
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Consider using 'COPY ./README.md /' command instead of 'ADD ./README.md /'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should use COPY instead of ADD unless you want to extract a tar file. Note that an ADD command will extract a tar file, which adds the risk of Zip-based vulnerabilities. Accordingly, it is advised to use a COPY command, which does not extract tar files.
+
+See https://avd.aquasec.com/misconfig/ds005
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/cli@v20.10.20+incompatible/cli/command/image/testdata/Dockerfile.test:2
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   2 [ ADD ./README.md /
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/cli@v20.10.20+incompatible/dockerfiles/Dockerfile.binary-native (dockerfile)
+=========================================================================================================
+Tests: 27 (SUCCESSES: 24, FAILURES: 3, EXCEPTIONS: 0)
+Failures: 3 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 2, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: '--no-cache' is missed: apk add -U git bash coreutils gcc musl-dev
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should use 'apk add' with '--no-cache' to clean package cached data and reduce image size.
+
+See https://avd.aquasec.com/misconfig/ds025
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/cli@v20.10.20+incompatible/dockerfiles/Dockerfile.binary-native:5
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   5 [ RUN     apk add -U git bash coreutils gcc musl-dev
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/cli@v20.10.20+incompatible/dockerfiles/Dockerfile.cross (dockerfile)
+=================================================================================================
+Tests: 27 (SUCCESSES: 25, FAILURES: 2, EXCEPTIONS: 0)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/cli@v20.10.20+incompatible/dockerfiles/Dockerfile.dev (dockerfile)
+===============================================================================================
+Tests: 27 (SUCCESSES: 25, FAILURES: 2, EXCEPTIONS: 0)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/cli@v20.10.20+incompatible/dockerfiles/Dockerfile.e2e (dockerfile)
+===============================================================================================
+Tests: 27 (SUCCESSES: 24, FAILURES: 3, EXCEPTIONS: 0)
+Failures: 3 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 2, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: '--no-install-recommends' flag is missed: 'apt-get update && apt-get install -y     build-essential     curl     openssl     openssh-client     && rm -rf /var/lib/apt/lists/*'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+'apt-get' install should use '--no-install-recommends' to minimize image size.
+
+See https://avd.aquasec.com/misconfig/ds029
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/cli@v20.10.20+incompatible/dockerfiles/Dockerfile.e2e:6-11
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   6 ┌ RUN apt-get update && apt-get install -y \
+   7 │     build-essential \
+   8 │     curl \
+   9 │     openssl \
+  10 │     openssh-client \
+  11 └     && rm -rf /var/lib/apt/lists/*
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/cli@v20.10.20+incompatible/dockerfiles/Dockerfile.lint (dockerfile)
+================================================================================================
+Tests: 27 (SUCCESSES: 25, FAILURES: 2, EXCEPTIONS: 0)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/cli@v20.10.20+incompatible/dockerfiles/Dockerfile.shellcheck (dockerfile)
+======================================================================================================
+Tests: 27 (SUCCESSES: 25, FAILURES: 2, EXCEPTIONS: 0)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/cli@v20.10.20+incompatible/docs/yaml/Dockerfile (dockerfile)
+=========================================================================================
+Tests: 27 (SUCCESSES: 25, FAILURES: 2, EXCEPTIONS: 0)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/cli@v20.10.20+incompatible/e2e/testdata/Dockerfile.connhelper-ssh (dockerfile)
+===========================================================================================================
+Tests: 27 (SUCCESSES: 24, FAILURES: 3, EXCEPTIONS: 0)
+Failures: 3 (UNKNOWN: 0, LOW: 1, MEDIUM: 1, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: Port 22 should not be exposed in Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Exposing port 22 might allow users to SSH into the container.
+
+See https://avd.aquasec.com/misconfig/ds004
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/cli@v20.10.20+incompatible/e2e/testdata/Dockerfile.connhelper-ssh:10
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  10 [ EXPOSE 22
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/cli@v20.10.20+incompatible/e2e/testdata/Dockerfile.evil-notary-server (dockerfile)
+===============================================================================================================
+Tests: 27 (SUCCESSES: 25, FAILURES: 2, EXCEPTIONS: 0)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/cli@v20.10.20+incompatible/e2e/testdata/Dockerfile.notary-server (dockerfile)
+==========================================================================================================
+Tests: 27 (SUCCESSES: 25, FAILURES: 2, EXCEPTIONS: 0)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/distribution@v2.8.1+incompatible/Dockerfile (dockerfile)
+=====================================================================================
+Tests: 27 (SUCCESSES: 25, FAILURES: 2, EXCEPTIONS: 0)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/distribution@v2.8.1+incompatible/contrib/compose/nginx/Dockerfile (dockerfile)
+===========================================================================================================
+Tests: 27 (SUCCESSES: 25, FAILURES: 2, EXCEPTIONS: 0)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/distribution@v2.8.1+incompatible/contrib/docker-integration/Dockerfile (dockerfile)
+================================================================================================================
+Tests: 27 (SUCCESSES: 24, FAILURES: 3, EXCEPTIONS: 0)
+Failures: 3 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 2, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: MAINTAINER should not be used: 'MAINTAINER Docker Distribution Team <distribution@docker.com>'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+MAINTAINER has been deprecated since Docker 1.13.0.
+
+See https://avd.aquasec.com/misconfig/ds022
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/distribution@v2.8.1+incompatible/contrib/docker-integration/Dockerfile:3
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   3 [ MAINTAINER Docker Distribution Team <distribution@docker.com>
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/distribution@v2.8.1+incompatible/contrib/docker-integration/nginx/Dockerfile (dockerfile)
+======================================================================================================================
+Tests: 27 (SUCCESSES: 25, FAILURES: 2, EXCEPTIONS: 0)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/distribution@v2.8.1+incompatible/contrib/docker-integration/tokenserver-oauth/Dockerfile (dockerfile)
+==================================================================================================================================
+Tests: 27 (SUCCESSES: 25, FAILURES: 2, EXCEPTIONS: 0)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/distribution@v2.8.1+incompatible/contrib/docker-integration/tokenserver/Dockerfile (dockerfile)
+============================================================================================================================
+Tests: 27 (SUCCESSES: 25, FAILURES: 2, EXCEPTIONS: 0)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/distribution@v2.8.1+incompatible/project/dev-image/Dockerfile (dockerfile)
+=======================================================================================================
+Tests: 27 (SUCCESSES: 25, FAILURES: 2, EXCEPTIONS: 0)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/docker-credential-helpers@v0.7.0/Dockerfile (dockerfile)
+=====================================================================================
+Tests: 30 (SUCCESSES: 23, FAILURES: 7, EXCEPTIONS: 0)
+Failures: 7 (UNKNOWN: 0, LOW: 1, MEDIUM: 2, HIGH: 4, CRITICAL: 0)
+
+MEDIUM: Specify a tag in the 'FROM' statement for image 'alpine'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+When using a 'FROM' statement you should use a specific tag to avoid uncontrolled behavior when the image is updated.
+
+See https://avd.aquasec.com/misconfig/ds001
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/docker-credential-helpers@v0.7.0/Dockerfile:148
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 148 [ FROM --platform=$BUILDPLATFORM alpine AS releaser
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: Specify a tag in the 'FROM' statement for image 'build-$TARGETOS'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+When using a 'FROM' statement you should use a specific tag to avoid uncontrolled behavior when the image is updated.
+
+See https://avd.aquasec.com/misconfig/ds001
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/docker-credential-helpers@v0.7.0/Dockerfile:143
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 143 [ FROM build-$TARGETOS AS build
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: '--no-install-recommends' flag is missed: 'apt-get install -y binutils gcc libc6-dev libgcc-10-dev libsecret-1-dev pkg-config'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+'apt-get' install should use '--no-install-recommends' to minimize image size.
+
+See https://avd.aquasec.com/misconfig/ds029
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/docker-credential-helpers@v0.7.0/Dockerfile:57
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  57 [ RUN apt-get install -y binutils gcc libc6-dev libgcc-10-dev libsecret-1-dev pkg-config
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: '--no-install-recommends' flag is missed: 'xx-apt-get install -y binutils gcc libc6-dev libgcc-10-dev libsecret-1-dev pkg-config'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+'apt-get' install should use '--no-install-recommends' to minimize image size.
+
+See https://avd.aquasec.com/misconfig/ds029
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/docker-credential-helpers@v0.7.0/Dockerfile:66
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  66 [ RUN xx-apt-get install -y binutils gcc libc6-dev libgcc-10-dev libsecret-1-dev pkg-config
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: '--no-install-recommends' flag is missed: 'xx-apt-get install -y dbus-x11 gnome-keyring gpg-agent gpgconf libsecret-1-dev pass'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+'apt-get' install should use '--no-install-recommends' to minimize image size.
+
+See https://avd.aquasec.com/misconfig/ds029
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/docker-credential-helpers@v0.7.0/Dockerfile:70
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  70 [ RUN xx-apt-get install -y dbus-x11 gnome-keyring gpg-agent gpgconf libsecret-1-dev pass
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/docker-credential-helpers@v0.7.0/deb/Dockerfile (dockerfile)
+=========================================================================================
+Tests: 27 (SUCCESSES: 24, FAILURES: 3, EXCEPTIONS: 0)
+Failures: 3 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 2, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: '--no-install-recommends' flag is missed: 'apt-get update && apt-get install -yy debhelper dh-make libsecret-1-dev'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+'apt-get' install should use '--no-install-recommends' to minimize image size.
+
+See https://avd.aquasec.com/misconfig/ds029
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/docker-credential-helpers@v0.7.0/deb/Dockerfile:10
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  10 [ RUN apt-get update && apt-get install -yy debhelper dh-make libsecret-1-dev
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/docker@v20.10.20+incompatible/Dockerfile (dockerfile)
+==================================================================================
+Tests: 29 (SUCCESSES: 23, FAILURES: 6, EXCEPTIONS: 0)
+Failures: 6 (UNKNOWN: 0, LOW: 1, MEDIUM: 4, HIGH: 1, CRITICAL: 0)
+
+MEDIUM: Specify a tag in the 'FROM' statement for image 'cross-${CROSS}'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+When using a 'FROM' statement you should use a specific tag to avoid uncontrolled behavior when the image is updated.
+
+See https://avd.aquasec.com/misconfig/ds001
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/docker@v20.10.20+incompatible/Dockerfile:121
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 121 [ FROM cross-${CROSS} as dev-base
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: Specify a tag in the 'FROM' statement for image 'dev-systemd-${SYSTEMD}'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+When using a 'FROM' statement you should use a specific tag to avoid uncontrolled behavior when the image is updated.
+
+See https://avd.aquasec.com/misconfig/ds001
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/docker@v20.10.20+incompatible/Dockerfile:348
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 348 [ FROM dev-systemd-${SYSTEMD} AS dev
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: Specify a tag in the 'FROM' statement for image 'runtime-dev-cross-${CROSS}'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+When using a 'FROM' statement you should use a specific tag to avoid uncontrolled behavior when the image is updated.
+
+See https://avd.aquasec.com/misconfig/ds001
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/docker@v20.10.20+incompatible/Dockerfile:155
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 155 [ FROM runtime-dev-cross-${CROSS} AS runtime-dev
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: RUN should not be used to change directory: 'mkdir -p /usr/src/criu     && curl -sSL https://github.com/checkpoint-restore/criu/archive/v${CRIU_VERSION}.tar.gz | tar -C /usr/src/criu/ -xz --strip-components=1     && cd /usr/src/criu     && make     && make PREFIX=/build/ install-criu'. Use 'WORKDIR' statement instead.
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Use WORKDIR instead of proliferating instructions like 'RUN cd … && do-something', which are hard to read, troubleshoot, and maintain.
+
+See https://avd.aquasec.com/misconfig/ds013
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/docker@v20.10.20+incompatible/Dockerfile:38-42
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  38 ┌ RUN mkdir -p /usr/src/criu \
+  39 │     && curl -sSL https://github.com/checkpoint-restore/criu/archive/v${CRIU_VERSION}.tar.gz | tar -C /usr/src/criu/ -xz --strip-components=1 \
+  40 │     && cd /usr/src/criu \
+  41 │     && make \
+  42 └     && make PREFIX=/build/ install-criu
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/docker@v20.10.20+incompatible/Dockerfile.e2e (dockerfile)
+======================================================================================
+Tests: 27 (SUCCESSES: 25, FAILURES: 2, EXCEPTIONS: 0)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/docker@v20.10.20+incompatible/Dockerfile.simple (dockerfile)
+=========================================================================================
+Tests: 27 (SUCCESSES: 25, FAILURES: 2, EXCEPTIONS: 0)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/docker@v20.10.20+incompatible/Dockerfile.windows (dockerfile)
+==========================================================================================
+Tests: 27 (SUCCESSES: 24, FAILURES: 3, EXCEPTIONS: 0)
+Failures: 3 (UNKNOWN: 0, LOW: 1, MEDIUM: 1, HIGH: 1, CRITICAL: 0)
+
+MEDIUM: Specify a tag in the 'FROM' statement for image 'microsoft/windowsservercore'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+When using a 'FROM' statement you should use a specific tag to avoid uncontrolled behavior when the image is updated.
+
+See https://avd.aquasec.com/misconfig/ds001
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/docker@v20.10.20+incompatible/Dockerfile.windows:163
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 163 [ FROM microsoft/windowsservercore
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/docker@v20.10.20+incompatible/contrib/busybox/Dockerfile (dockerfile)
+==================================================================================================
+Tests: 27 (SUCCESSES: 24, FAILURES: 3, EXCEPTIONS: 0)
+Failures: 3 (UNKNOWN: 0, LOW: 2, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Consider using 'COPY https://frippery.org/files/busybox/busybox-w32-${BUSYBOX_VERSION}.exe /bin/busybox.exe' command instead of 'ADD https://frippery.org/files/busybox/busybox-w32-${BUSYBOX_VERSION}.exe /bin/busybox.exe'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should use COPY instead of ADD unless you want to extract a tar file. Note that an ADD command will extract a tar file, which adds the risk of Zip-based vulnerabilities. Accordingly, it is advised to use a COPY command, which does not extract tar files.
+
+See https://avd.aquasec.com/misconfig/ds005
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/docker@v20.10.20+incompatible/contrib/busybox/Dockerfile:22
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  22 [ ADD https://frippery.org/files/busybox/busybox-w32-${BUSYBOX_VERSION}.exe /bin/busybox.exe
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/docker@v20.10.20+incompatible/contrib/httpserver/Dockerfile (dockerfile)
+=====================================================================================================
+Tests: 27 (SUCCESSES: 24, FAILURES: 3, EXCEPTIONS: 0)
+Failures: 3 (UNKNOWN: 0, LOW: 1, MEDIUM: 1, HIGH: 1, CRITICAL: 0)
+
+MEDIUM: Specify a tag in the 'FROM' statement for image 'busybox'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+When using a 'FROM' statement you should use a specific tag to avoid uncontrolled behavior when the image is updated.
+
+See https://avd.aquasec.com/misconfig/ds001
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/docker@v20.10.20+incompatible/contrib/httpserver/Dockerfile:1
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1 [ FROM busybox
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/docker@v20.10.20+incompatible/contrib/nnp-test/Dockerfile (dockerfile)
+===================================================================================================
+Tests: 27 (SUCCESSES: 25, FAILURES: 2, EXCEPTIONS: 0)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/docker@v20.10.20+incompatible/contrib/syscall-test/Dockerfile (dockerfile)
+=======================================================================================================
+Tests: 27 (SUCCESSES: 25, FAILURES: 2, EXCEPTIONS: 0)
+Failures: 2 (UNKNOWN: 0, LOW: 1, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/docker@v20.10.20+incompatible/integration/build/testdata/Dockerfile.TestBuildMultiStageCopy (dockerfile)
+=====================================================================================================================================
+Tests: 27 (SUCCESSES: 24, FAILURES: 3, EXCEPTIONS: 0)
+Failures: 3 (UNKNOWN: 0, LOW: 1, MEDIUM: 1, HIGH: 1, CRITICAL: 0)
+
+MEDIUM: Specify a tag in the 'FROM' statement for image 'busybox'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+When using a 'FROM' statement you should use a specific tag to avoid uncontrolled behavior when the image is updated.
+
+See https://avd.aquasec.com/misconfig/ds001
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/docker@v20.10.20+incompatible/integration/build/testdata/Dockerfile.TestBuildMultiStageCopy:1
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   1 [ FROM busybox AS base
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/docker/docker@v20.10.20+incompatible/integration/build/testdata/Dockerfile.TestBuildPreserveOwnership (dockerfile)
+========================================================================================================================================
+Tests: 28 (SUCCESSES: 24, FAILURES: 4, EXCEPTIONS: 0)
+Failures: 4 (UNKNOWN: 0, LOW: 1, MEDIUM: 2, HIGH: 1, CRITICAL: 0)
+
+MEDIUM: Specify a tag in the 'FROM' statement for image 'busybox'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+When using a 'FROM' statement you should use a specific tag to avoid uncontrolled behavior when the image is updated.
+
+See https://avd.aquasec.com/misconfig/ds001
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/docker@v20.10.20+incompatible/integration/build/testdata/Dockerfile.TestBuildPreserveOwnership:2
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   2 [ FROM busybox AS source
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: Specify a tag in the 'FROM' statement for image 'busybox'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+When using a 'FROM' statement you should use a specific tag to avoid uncontrolled behavior when the image is updated.
+
+See https://avd.aquasec.com/misconfig/ds001
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/docker/docker@v20.10.20+incompatible/integration/build/testdata/Dockerfile.TestBuildPreserveOwnership:10
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  10 [ FROM busybox AS test_base
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/jetstack/paranoia@v0.2.1/Dockerfile (dockerfile)
+======================================================================
+Tests: 27 (SUCCESSES: 24, FAILURES: 3, EXCEPTIONS: 0)
+Failures: 3 (UNKNOWN: 0, LOW: 2, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Consider using 'COPY https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem /etc/ssl/certs/DigiCertGlobalRootCA.crt' command instead of 'ADD https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem /etc/ssl/certs/DigiCertGlobalRootCA.crt'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should use COPY instead of ADD unless you want to extract a tar file. Note that an ADD command will extract a tar file, which adds the risk of Zip-based vulnerabilities. Accordingly, it is advised to use a COPY command, which does not extract tar files.
+
+See https://avd.aquasec.com/misconfig/ds005
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/jetstack/paranoia@v0.2.1/Dockerfile:24
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  24 [ ADD https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem /etc/ssl/certs/DigiCertGlobalRootCA.crt
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/github.com/jetstack/paranoia@v0.2.1/test/container-two-certs/Dockerfile (dockerfile)
+===============================================================================================
+Tests: 28 (SUCCESSES: 24, FAILURES: 4, EXCEPTIONS: 0)
+Failures: 4 (UNKNOWN: 0, LOW: 3, MEDIUM: 0, HIGH: 1, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Consider using 'COPY https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem /etc/ssl/certs/DigiCertGlobalRootCA.crt' command instead of 'ADD https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem /etc/ssl/certs/DigiCertGlobalRootCA.crt'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should use COPY instead of ADD unless you want to extract a tar file. Note that an ADD command will extract a tar file, which adds the risk of Zip-based vulnerabilities. Accordingly, it is advised to use a COPY command, which does not extract tar files.
+
+See https://avd.aquasec.com/misconfig/ds005
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/jetstack/paranoia@v0.2.1/test/container-two-certs/Dockerfile:3
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   3 [ ADD https://cacerts.digicert.com/DigiCertGlobalRootCA.crt.pem /etc/ssl/certs/DigiCertGlobalRootCA.crt
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Consider using 'COPY https://letsencrypt.org/certs/isrgrootx1.pem /etc/ssl/certs/isrgrootx1.crt' command instead of 'ADD https://letsencrypt.org/certs/isrgrootx1.pem /etc/ssl/certs/isrgrootx1.crt'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should use COPY instead of ADD unless you want to extract a tar file. Note that an ADD command will extract a tar file, which adds the risk of Zip-based vulnerabilities. Accordingly, it is advised to use a COPY command, which does not extract tar files.
+
+See https://avd.aquasec.com/misconfig/ds005
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/github.com/jetstack/paranoia@v0.2.1/test/container-two-certs/Dockerfile:4
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+   4 [ ADD https://letsencrypt.org/certs/isrgrootx1.pem /etc/ssl/certs/isrgrootx1.crt
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/golang.org/x/sys@v0.1.0/unix/linux/Dockerfile (dockerfile)
+=====================================================================
+Tests: 29 (SUCCESSES: 22, FAILURES: 7, EXCEPTIONS: 0)
+Failures: 7 (UNKNOWN: 0, LOW: 2, MEDIUM: 2, HIGH: 3, CRITICAL: 0)
+
+HIGH: Specify at least 1 USER command in Dockerfile with non-root user as argument
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Running containers with 'root' user can lead to a container escape situation. It is a best practice to run containers as non-root users, which can be done by adding a 'USER' statement to the Dockerfile.
+
+See https://avd.aquasec.com/misconfig/ds002
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: RUN should not be used to change directory: 'apt-get update && apt-get install wget xz-utils -y && mkdir /loong64 && cd /loong64     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/qemu-loongarch-2022-4-01.tar.gz     && tar xf qemu-loongarch-2022-4-01.tar.gz && cp ./4-1/new-world/qemu-loongarch64 /usr/bin/     && rm -rf qemu-loongarch-2022-4-01.tar.gz 4-1     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz     && tar xf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz && mv cross-tools.gcc_glibc /usr/local/cross-tools-loong64     && rm -rf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz     && ln -s /usr/local/cross-tools-loong64/bin/loongarch64-unknown-linux-gnu-gcc /usr/bin/loongarch64-linux-gnu-gcc     && rm -rf /loong64'. Use 'WORKDIR' statement instead.
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Use WORKDIR instead of proliferating instructions like 'RUN cd … && do-something', which are hard to read, troubleshoot, and maintain.
+
+See https://avd.aquasec.com/misconfig/ds013
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/golang.org/x/sys@v0.1.0/unix/linux/Dockerfile:61-69
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  61 ┌ RUN apt-get update && apt-get install wget xz-utils -y && mkdir /loong64 && cd /loong64 \
+  62 │     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/qemu-loongarch-2022-4-01.tar.gz \
+  63 │     && tar xf qemu-loongarch-2022-4-01.tar.gz && cp ./4-1/new-world/qemu-loongarch64 /usr/bin/ \
+  64 │     && rm -rf qemu-loongarch-2022-4-01.tar.gz 4-1 \
+  65 │     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz \
+  66 │     && tar xf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz && mv cross-tools.gcc_glibc /usr/local/cross-tools-loong64 \
+  67 │     && rm -rf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz \
+  68 │     && ln -s /usr/local/cross-tools-loong64/bin/loongarch64-unknown-linux-gnu-gcc /usr/bin/loongarch64-linux-gnu-gcc \
+  69 └     && rm -rf /loong64
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: RUN should not be used to change directory: 'git clone https://github.com/loongson/golang-infra.git /git/loong64-patches     && git config --global user.name "golang" && git config --global user.email "golang@localhost"     && cd /git/loong64-patches && git checkout glibc-v2.35 && cd /git/glibc && git am /git/loong64-patches/*.patch     && curl -fsSL https://git.savannah.gnu.org/cgit/config.git/plain/config.sub -o /git/glibc/scripts/config.sub'. Use 'WORKDIR' statement instead.
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Use WORKDIR instead of proliferating instructions like 'RUN cd … && do-something', which are hard to read, troubleshoot, and maintain.
+
+See https://avd.aquasec.com/misconfig/ds013
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/golang.org/x/sys@v0.1.0/unix/linux/Dockerfile:24-27
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  24 ┌ RUN git clone https://github.com/loongson/golang-infra.git /git/loong64-patches \
+  25 │     && git config --global user.name "golang" && git config --global user.email "golang@localhost" \
+  26 │     && cd /git/loong64-patches && git checkout glibc-v2.35 && cd /git/glibc && git am /git/loong64-patches/*.patch \
+  27 └     && curl -fsSL https://git.savannah.gnu.org/cgit/config.git/plain/config.sub -o /git/glibc/scripts/config.sub
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Shouldn't use both curl and wget
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Avoid using both 'wget' and 'curl' since these tools have the same effect.
+
+See https://avd.aquasec.com/misconfig/ds014
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/golang.org/x/sys@v0.1.0/unix/linux/Dockerfile:61-69
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  61 ┌ RUN apt-get update && apt-get install wget xz-utils -y && mkdir /loong64 && cd /loong64 \
+  62 │     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/qemu-loongarch-2022-4-01.tar.gz \
+  63 │     && tar xf qemu-loongarch-2022-4-01.tar.gz && cp ./4-1/new-world/qemu-loongarch64 /usr/bin/ \
+  64 │     && rm -rf qemu-loongarch-2022-4-01.tar.gz 4-1 \
+  65 │     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz \
+  66 │     && tar xf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz && mv cross-tools.gcc_glibc /usr/local/cross-tools-loong64 \
+  67 │     && rm -rf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz \
+  68 │     && ln -s /usr/local/cross-tools-loong64/bin/loongarch64-unknown-linux-gnu-gcc /usr/bin/loongarch64-linux-gnu-gcc \
+  69 └     && rm -rf /loong64
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Add HEALTHCHECK instruction in your Dockerfile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+You should add HEALTHCHECK instruction in your docker container images to perform the health check on running containers.
+
+See https://avd.aquasec.com/misconfig/ds026
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: '--no-install-recommends' flag is missed: 'apt-get update && apt-get install -y         gcc-aarch64-linux-gnu       gcc-arm-linux-gnueabi             gcc-mips-linux-gnu          gcc-mips64-linux-gnuabi64         gcc-mips64el-linux-gnuabi64 gcc-mipsel-linux-gnu              gcc-powerpc-linux-gnu       gcc-powerpc64-linux-gnu           gcc-powerpc64le-linux-gnu   gcc-riscv64-linux-gnu             gcc-s390x-linux-gnu         gcc-sparc64-linux-gnu         && apt-get clean     && rm -rf /var/lib/apt/lists/*'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+'apt-get' install should use '--no-install-recommends' to minimize image size.
+
+See https://avd.aquasec.com/misconfig/ds029
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/golang.org/x/sys@v0.1.0/unix/linux/Dockerfile:50-58
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  50 ┌ RUN apt-get update && apt-get install -y \
+  51 │         gcc-aarch64-linux-gnu       gcc-arm-linux-gnueabi     \
+  52 │         gcc-mips-linux-gnu          gcc-mips64-linux-gnuabi64 \
+  53 │         gcc-mips64el-linux-gnuabi64 gcc-mipsel-linux-gnu      \
+  54 │         gcc-powerpc-linux-gnu       gcc-powerpc64-linux-gnu   \
+  55 │         gcc-powerpc64le-linux-gnu   gcc-riscv64-linux-gnu     \
+  56 │         gcc-s390x-linux-gnu         gcc-sparc64-linux-gnu     \
+  57 │     && apt-get clean \
+  58 └     && rm -rf /var/lib/apt/lists/*
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: '--no-install-recommends' flag is missed: 'apt-get update && apt-get install wget xz-utils -y && mkdir /loong64 && cd /loong64     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/qemu-loongarch-2022-4-01.tar.gz     && tar xf qemu-loongarch-2022-4-01.tar.gz && cp ./4-1/new-world/qemu-loongarch64 /usr/bin/     && rm -rf qemu-loongarch-2022-4-01.tar.gz 4-1     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz     && tar xf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz && mv cross-tools.gcc_glibc /usr/local/cross-tools-loong64     && rm -rf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz     && ln -s /usr/local/cross-tools-loong64/bin/loongarch64-unknown-linux-gnu-gcc /usr/bin/loongarch64-linux-gnu-gcc     && rm -rf /loong64'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+'apt-get' install should use '--no-install-recommends' to minimize image size.
+
+See https://avd.aquasec.com/misconfig/ds029
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/golang.org/x/sys@v0.1.0/unix/linux/Dockerfile:61-69
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  61 ┌ RUN apt-get update && apt-get install wget xz-utils -y && mkdir /loong64 && cd /loong64 \
+  62 │     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/qemu-loongarch-2022-4-01.tar.gz \
+  63 │     && tar xf qemu-loongarch-2022-4-01.tar.gz && cp ./4-1/new-world/qemu-loongarch64 /usr/bin/ \
+  64 │     && rm -rf qemu-loongarch-2022-4-01.tar.gz 4-1 \
+  65 │     && wget -q https://github.com/loongson/build-tools/releases/download/2021.12.21/loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz \
+  66 │     && tar xf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz && mv cross-tools.gcc_glibc /usr/local/cross-tools-loong64 \
+  67 │     && rm -rf loongarch64-clfs-2022-03-03-cross-tools-gcc-glibc.tar.xz \
+  68 │     && ln -s /usr/local/cross-tools-loong64/bin/loongarch64-unknown-linux-gnu-gcc /usr/bin/loongarch64-linux-gnu-gcc \
+  69 └     && rm -rf /loong64
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+
+go/pkg/mod/sigs.k8s.io/controller-runtime@v0.13.0/pkg/envtest/testdata/notcrd.yaml (kubernetes)
+===============================================================================================
+Tests: 139 (SUCCESSES: 126, FAILURES: 13, EXCEPTIONS: 0)
+Failures: 13 (UNKNOWN: 0, LOW: 9, MEDIUM: 3, HIGH: 1, CRITICAL: 0)
+
+MEDIUM: Container 'nginx' of Deployment 'nginx-deployment' should set 'securityContext.allowPrivilegeEscalation' to false
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+A program inside the container can elevate its own privileges and run as root, which might give the program control over the container and node.
+
+See https://avd.aquasec.com/misconfig/ksv001
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/sigs.k8s.io/controller-runtime@v0.13.0/pkg/envtest/testdata/notcrd.yaml:17-18
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  17 ┌       - name: nginx
+  18 └         image: nginx:1.7.9
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Container 'nginx' of Deployment 'nginx-deployment' should add 'ALL' to 'securityContext.capabilities.drop'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+The container should drop all default capabilities and add only those that are needed for its execution.
+
+See https://avd.aquasec.com/misconfig/ksv003
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/sigs.k8s.io/controller-runtime@v0.13.0/pkg/envtest/testdata/notcrd.yaml:17-18
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  17 ┌       - name: nginx
+  18 └         image: nginx:1.7.9
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Container 'nginx' of Deployment 'nginx-deployment' should set 'resources.limits.cpu'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Enforcing CPU limits prevents DoS via resource exhaustion.
+
+See https://avd.aquasec.com/misconfig/ksv011
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/sigs.k8s.io/controller-runtime@v0.13.0/pkg/envtest/testdata/notcrd.yaml:17-18
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  17 ┌       - name: nginx
+  18 └         image: nginx:1.7.9
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: Container 'nginx' of Deployment 'nginx-deployment' should set 'securityContext.runAsNonRoot' to true
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Force the running image to run as a non-root user to ensure least privileges.
+
+See https://avd.aquasec.com/misconfig/ksv012
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/sigs.k8s.io/controller-runtime@v0.13.0/pkg/envtest/testdata/notcrd.yaml:17-18
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  17 ┌       - name: nginx
+  18 └         image: nginx:1.7.9
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+HIGH: Container 'nginx' of Deployment 'nginx-deployment' should set 'securityContext.readOnlyRootFilesystem' to true
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+An immutable root file system prevents applications from writing to their local disk. This can limit intrusions, as attackers will not be able to tamper with the file system or write foreign executables to disk.
+
+See https://avd.aquasec.com/misconfig/ksv014
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/sigs.k8s.io/controller-runtime@v0.13.0/pkg/envtest/testdata/notcrd.yaml:17-18
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  17 ┌       - name: nginx
+  18 └         image: nginx:1.7.9
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Container 'nginx' of Deployment 'nginx-deployment' should set 'resources.requests.cpu'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+When containers have resource requests specified, the scheduler can make better decisions about which nodes to place pods on, and how to deal with resource contention.
+
+See https://avd.aquasec.com/misconfig/ksv015
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/sigs.k8s.io/controller-runtime@v0.13.0/pkg/envtest/testdata/notcrd.yaml:17-18
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  17 ┌       - name: nginx
+  18 └         image: nginx:1.7.9
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Container 'nginx' of Deployment 'nginx-deployment' should set 'resources.requests.memory'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+When containers have memory requests specified, the scheduler can make better decisions about which nodes to place pods on, and how to deal with resource contention.
+
+See https://avd.aquasec.com/misconfig/ksv016
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/sigs.k8s.io/controller-runtime@v0.13.0/pkg/envtest/testdata/notcrd.yaml:17-18
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  17 ┌       - name: nginx
+  18 └         image: nginx:1.7.9
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Container 'nginx' of Deployment 'nginx-deployment' should set 'resources.limits.memory'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Enforcing memory limits prevents DoS via resource exhaustion.
+
+See https://avd.aquasec.com/misconfig/ksv018
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/sigs.k8s.io/controller-runtime@v0.13.0/pkg/envtest/testdata/notcrd.yaml:17-18
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  17 ┌       - name: nginx
+  18 └         image: nginx:1.7.9
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Container 'nginx' of Deployment 'nginx-deployment' should set 'securityContext.runAsUser' > 10000
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Force the container to run with user ID > 10000 to avoid conflicts with the host’s user table.
+
+See https://avd.aquasec.com/misconfig/ksv020
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/sigs.k8s.io/controller-runtime@v0.13.0/pkg/envtest/testdata/notcrd.yaml:17-18
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  17 ┌       - name: nginx
+  18 └         image: nginx:1.7.9
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Container 'nginx' of Deployment 'nginx-deployment' should set 'securityContext.runAsGroup' > 10000
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Force the container to run with group ID > 10000 to avoid conflicts with the host’s user table.
+
+See https://avd.aquasec.com/misconfig/ksv021
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/sigs.k8s.io/controller-runtime@v0.13.0/pkg/envtest/testdata/notcrd.yaml:17-18
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  17 ┌       - name: nginx
+  18 └         image: nginx:1.7.9
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: Either Pod or Container should set 'securityContext.seccompProfile.type' to 'RuntimeDefault'
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+According to pod security standard 'Seccomp', the RuntimeDefault seccomp profile must be required, or allow specific additional profiles.
+
+See https://avd.aquasec.com/misconfig/ksv030
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/sigs.k8s.io/controller-runtime@v0.13.0/pkg/envtest/testdata/notcrd.yaml:17-18
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  17 ┌       - name: nginx
+  18 └         image: nginx:1.7.9
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+MEDIUM: container "nginx" of deployment "nginx-deployment" in "default" namespace should specify a seccomp profile
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+A program inside the container can bypass Seccomp protection policies.
+
+See https://avd.aquasec.com/misconfig/ksv104
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+LOW: container should drop all
+═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════════
+Containers must drop ALL capabilities, and are only permitted to add back the NET_BIND_SERVICE capability.
+
+See https://avd.aquasec.com/misconfig/ksv106
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ go/pkg/mod/sigs.k8s.io/controller-runtime@v0.13.0/pkg/envtest/testdata/notcrd.yaml:17-18
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+  17 ┌       - name: nginx
+  18 └         image: nginx:1.7.9
+─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+
