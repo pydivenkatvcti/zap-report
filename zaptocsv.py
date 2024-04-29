@@ -16,20 +16,31 @@ data = [['Risk', 'Confidence', 'Count']]
 
 # Extract data from the alerts section
 if alerts_section:
-    # Find all anchor tags within the alerts section
-    alert_links = alerts_section.find_all('a')
-    for link in alert_links:
-        try:
-            # Extract risk level, confidence level, and count from the anchor tag text
-            risk_level = link.find(class_='risk-level').text.strip()
-            confidence_level = link.find(class_='confidence-level').text.strip()
-            count = int(link.find('span').text.strip('()'))
+    # Find all lists within the alerts section
+    alert_lists = alerts_section.find_all('ol')
+    for alert_list in alert_lists:
+        # Extract the risk level and confidence level from the list heading
+        heading = alert_list.find_previous('a')
+        risk_level_tag = heading.find(class_='risk-level')
+        confidence_level_tag = heading.find(class_='confidence-level')
+        
+        # Check if risk level and confidence level tags are found
+        if risk_level_tag and confidence_level_tag:
+            risk_level = risk_level_tag.text.strip()
+            confidence_level = confidence_level_tag.text.strip()
+        else:
+            risk_level = 'Unknown'
+            confidence_level = 'Unknown'
+        
+        # Find all list items within the list
+        items = alert_list.find_all('li')
+        for item in items:
+            # Extract the count from each list item
+            count_span = item.find('span')
+            count = int(count_span.text.strip('()')) if count_span and count_span.text.strip('()').isdigit() else 0
             
             # Append extracted data to the data list
             data.append([risk_level, confidence_level, count])
-        except AttributeError:
-            # Handle cases where one of the elements is missing
-            pass
 
 # Write the extracted data to a CSV file
 with open('owasp_alerts.csv', 'w', newline='') as csvfile:
