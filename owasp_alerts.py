@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import csv
 
-# Read the OWASP ZAP HTML report
+
 with open('2024-04-25-ZAP-Report-.html', 'r') as file:
     html_content = file.read()
 
